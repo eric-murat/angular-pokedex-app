@@ -1,0 +1,51 @@
+<h1>Pokedex de Arkhus Màj 08/05/2026</h1>
+
+<h2>{{ name() }}</h2>
+<img [src]="imgSrc()" [alt]="name()">
+<p>
+      Points de vie: {{ life() }}<BR>
+      Taille : {{ taille() }}<BR>
+      Points de vie x2: {{ doubleLife() }}<BR>
+</p>
+
+<button (click)="decrementLife()" [disabled]="life() <= 0">-</button>
+<button (click)="reset()">RAZ</button>
+<button (click)="incrementLife()" [disabled]="life() >= 35">+</button>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Person</th>
+      <th scope="col">Most interest in</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Chris</th>
+      <td>HTML tables</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th scope="row">Dennis</th>
+      <td>Web accessibility</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th scope="row">Sarah</th>
+      <td>JavaScript frameworks</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th scope="row">Karen</th>
+      <td>Web performance</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" [attr.colspan] = "propColSpan()">Average age</th>
+      <td>33</td>
+    </tr>
+  </tfoot>
+</table>
